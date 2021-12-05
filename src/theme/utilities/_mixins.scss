@@ -1,0 +1,24 @@
+@mixin icon-box-base($box-size, $icon-size) {
+  justify-content: center;
+  align-items: center;
+
+  width: $box-size;
+  height: $box-size;
+  font-size: $icon-size;
+}
+
+@mixin icon-box($box-size: 24px, $icon-size: 18px) {
+  display: flex;
+  @include icon-box-base($box-size, $icon-size);
+}
+
+@mixin rounded-square($size, $radius: 50%) {
+  border-radius: $radius;
+  width: $size;
+  height: $size;
+}
+
+@mixin icon-rounded-box($box-size: 24px, $icon-size: 18px) {
+  @include icon-box($box-size, $icon-size);
+  @include rounded-square($box-size);
+}

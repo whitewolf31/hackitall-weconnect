@@ -1,0 +1,145 @@
+@use "base/colors" as *;
+
+.view-container {
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  background: $light-gray;
+
+  .create-account-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .create-account-title {
+      margin-bottom: 16px;
+
+      h1 {
+        font-size: 36px;
+      }
+    }
+
+    mat-divider {
+      margin-bottom: 16px;
+    }
+
+    .form-inputs {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      mat-form-field {
+        width: 100%;
+      }
+    }
+
+    .account-keywords,
+    .account-certifications {
+      .chip-list {
+        margin-bottom: 16px;
+      }
+
+      .keyword-form-control {
+        cursor: text;
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+
+      .action-button {
+        &.back {
+          padding-left: 0;
+        }
+
+        &.next {
+          padding-right: 0;
+        }
+
+        .button-wrapper {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .audience-container {
+      margin: auto;
+      width: 100%;
+      border-radius: 8px;
+      padding: 16px;
+      background: $light-gray;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 19.4444px 29.1667px rgba(0, 0, 0, 0.16);
+
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .audience-reached {
+        margin: 32px 0;
+        font-size: 36px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.checkboxes {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-certifications {
+  margin-top: 8px;
+}
+
+.sliders {
+  display: flex;
+
+  .experience-slider {
+    width: 100%;
+    margin-top: 8px;
+
+    p {
+      text-align: center;
+    }
+
+    mat-slider {
+      width: 100%;
+    }
+  }
+
+  .price-slider {
+    width: 50%;
+    margin-top: 8px;
+
+    p {
+      text-align: center;
+    }
+
+    mat-slider {
+      width: 100%;
+    }
+  }
+}
+
+.success-wrapper {
+  margin: auto;
+
+  .success-circle {
+    font-size: 50px;
+    color: $green;
+  }
+
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}

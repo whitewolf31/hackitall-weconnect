@@ -1,0 +1,46 @@
+<div class="view-container">
+  <div class="persons-cards-container"
+    *ngIf="(persons$ | async) as persons">
+    <div class="person-card"
+      *ngFor="let person of persons">
+      <div class="image-container">
+        <img
+          src="https://lh3.googleusercontent.com/proxy/Pi1OppzvQIJLkW-cGUwZUuFakDv0UgEecfySWlsQuhxAfmx6AnZpGn6JsfyiaQsnj8OZLuT9aZBrrmK8viP1JrCEG7o2xuQ"
+          alt="profile-pic">
+      </div>
+      <div class="info-container">
+        <div class="name">
+          <h1>{{ person.name }}</h1>
+        </div>
+        <mat-chip-list>
+          <mat-chip *ngFor="let keyword of person.keywords"
+            [removable]="false">
+            {{ keyword }}
+          </mat-chip>
+        </mat-chip-list>
+        <div class="certifications-container">
+          <div class="certification">
+            {{ person.certifications.join(', ') }}
+          </div>
+        </div>
+        <div class="experience">
+          Years of Experience: {{ person.YoE }}
+        </div>
+        <div class="education">
+          <div *ngIf="person.education > 0">Bachelor</div>
+          <div *ngIf="person.education > 1">Master</div>
+          <div *ngIf="person.education > 2">PhD</div>
+        </div>
+      </div>
+      <div class="icons-container">
+        <div class="second-icon-container">
+          <mat-icon class="star-rate">star_rate</mat-icon>
+          {{ person.rating + " / 5" }}
+          <button mat-icon-button>
+            <mat-icon>send</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

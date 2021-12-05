@@ -1,0 +1,60 @@
+@use "base/colors" as *;
+@use "utilities/variables" as *;
+
+@mixin hack-mat-button($theme) {
+  .mat-button-toggle.small {
+    .mat-button-toggle-label-content {
+      line-height: 36px;
+    }
+  }
+
+  .mat-flat-button.colored:enabled {
+    background-color: var(--main-color);
+    color: var(--contrast-color);
+  }
+
+  .mat-flat-button.colored-light:enabled {
+    background-color: var(--medium-color);
+    color: var(--contrast-color);
+  }
+
+  .mat-button,
+  .mat-raised-button,
+  .mat-icon-button,
+  .mat-stroked-button,
+  .mat-flat-button {
+    border-radius: $button-border;
+
+    &:not([class*="mat-elevation-z"]) {
+      box-shadow: none;
+    }
+
+    &.light-primary-stroked-button {
+      background-color: $light-primary;
+      border-color: $medium-primary;
+
+      &:hover {
+        background-color: $medium-blue;
+      }
+    }
+  }
+
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button,
+  .mat-flat-button {
+    height: 36px;
+
+    &:not(.menu-button):not(.no-flex-wrapper) > .mat-button-wrapper {
+      > i,
+      > mat-icon {
+        margin-right: 8px;
+      }
+    }
+
+    &:not(.no-flex-wrapper) > .mat-button-wrapper {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}

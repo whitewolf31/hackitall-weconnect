@@ -1,0 +1,102 @@
+@use "utilities/variables" as *;
+@use "base/colors" as *;
+@use "~@angular/material/theming" as *;
+
+@font-face {
+  font-family: "Neogrotesk";
+  src: url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.eot");
+  src: url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.eot#iefix") format("embedded-opentype"),
+  url("/assets/fonts/NeogroteskPro-Light/NeogroteskPro-Light.woff") format("woff"),
+  url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.ttf") format("truetype"),
+  url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neogrotesk";
+  src: url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.eot");
+  src: url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.eot#iefix") format("embedded-opentype"),
+  url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.woff") format("woff"),
+  url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.ttf") format("truetype"),
+  url("/assets/fonts/NeogroteskProLight/NeogroteskPro-Light.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neogrotesk";
+  src: url("/assets/fonts/NeogroteskPro/NeogroteskPro-Regular.eot");
+  src: url("/assets/fonts/NeogroteskPro/NeogroteskPro-Regular.eot#iefix") format("embedded-opentype"),
+  url("/assets/fonts/NeogroteskPro/NeogroteskPro-Regular.woff") format("woff"),
+  url("/assets/fonts/NeogroteskPro/NeogroteskPro-Regular.ttf") format("truetype"),
+  url("/assets/fonts/NeogroteskPro/NeogroteskPro-Regular.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neogrotesk";
+  src: url("/assets/fonts/NeogroteskProBold/NeogroteskPro-Bold.eot");
+  src: url("/assets/fonts/NeogroteskProBold/NeogroteskPro-Bold.eot#iefix") format("embedded-opentype"),
+  url("/assets/fonts/NeogroteskProBold/NeogroteskPro-Bold.woff") format("woff"),
+  url("/assets/fonts/NeogroteskProBold/NeogroteskPro-Bold.ttf") format("truetype"),
+  url("/assets/fonts/NeogroteskProBold/NeogroteskPro-Bold.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+$primary-typography: mat-typography-config(
+  $font-family: $font-family-primary,
+  $headline: mat-typography-level(30px, 40px, 700),
+  $title: mat-typography-level(24px, 32px, 700),
+  $subheading-2: mat-typography-level(20px, 26px, 400),
+  $body-2: mat-typography-level(16px, 21px, 500),
+  $body-1: mat-typography-level(16px, 21px, 400),
+  $caption: mat-typography-level(13px, 17px, 400),
+  $button: mat-typography-level(15px, 15px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input: mat-typography-level(inherit, 1.125, 400)
+);
+
+// ! TYPINGS FROM DESIGN
+h1 {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.larger-text {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.very-small-bold-text {
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 700;
+}
+
+.small-text {
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: 400;
+}
+
+.regular {
+  line-height: 21px;
+  font-weight: 400;
+}

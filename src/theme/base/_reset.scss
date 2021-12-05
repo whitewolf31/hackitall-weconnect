@@ -1,0 +1,7 @@
+[type=reset],
+[type=submit],
+button,
+html [type=button] {
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-appearance: initial;
+}

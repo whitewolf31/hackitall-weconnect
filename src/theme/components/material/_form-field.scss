@@ -1,0 +1,205 @@
+@use "base/colors" as *;
+@use "utilities/variables" as *;
+
+@mixin edxp-mat-form-field($theme) {
+  .mat-form-field-disabled {
+    .mat-form-field-outline {
+      background: $white;
+      color: $light-gray;
+      border-radius: 8px;
+    }
+  }
+
+  .mat-form-field-outline {
+    background: rgba($white, 0.4);
+    border-radius: 8px;
+    color: $gray;
+  }
+
+  .mat-form-field.no-padding {
+    .mat-form-field-wrapper {
+      // This is correct, if 0 the element's height would have been too small
+      padding-bottom: 0.75em;
+    }
+  }
+
+  .mat-form-field-appearance-outline.centered-form {
+    .mat-form-field-flex {
+      align-items: center;
+    }
+
+    .mat-form-field-infix {
+      border-top-width: 0.5em;
+    }
+  }
+
+  .mat-form-field.black-hint-label {
+    .mat-hint {
+      color: $black;
+    }
+  }
+
+  .mat-form-field.no-underline {
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-infix {
+      padding-bottom: 0;
+    }
+  }
+
+  $form-field-wrapper-padding: 1.34375em;
+  $weird-padding-offset: 0.25em;
+  $search-field-padding: 0.5em;
+
+  .mat-form-field.search-form-field {
+    .mat-form-field-infix {
+      padding-top: $search-field-padding;
+    }
+
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+      top: 0;
+    }
+  }
+
+  .mat-form-field.low-padding {
+    .mat-form-field-flex {
+      padding-top: 0;
+    }
+
+    .mat-form-field-wrapper {
+      margin-bottom: -$form-field-wrapper-padding;
+    }
+  }
+
+  .mat-form-field[appearance="outline"].full-width {
+    width: 100%;
+
+    .mat-form-field-wrapper {
+      width: 100% !important;
+    }
+  }
+
+  .mat-form-field[appearance="outline"].narrow-filter {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $layout-breakpoint-md) {
+      width: 100%;
+
+      .mat-form-field-wrapper {
+        width: 100%;
+      }
+    }
+
+    @media screen and (min-width: $layout-breakpoint-md) {
+      .mat-form-field-wrapper {
+        min-width: 150px;
+        width: fit-content;
+      }
+
+      .mat-form-field-infix {
+        width: fit-content;
+      }
+    }
+
+    &.active-filled:not(.mat-form-field-should-float) {
+      .mat-form-field-wrapper {
+        background-color: $gray;
+        border-radius: 4px;
+      }
+    }
+
+    .mat-form-field-wrapper {
+      background-color: initial;
+      transition: background-color linear 0.1s;
+      padding-bottom: 0;
+    }
+
+    &.mat-form-field-should-float .mat-form-field-label {
+      transform: translateY(-1.59375em + $weird-padding-offset) scale(0.75);
+    }
+
+    .mat-form-field-infix {
+      margin-top: -$weird-padding-offset;
+      padding-top: $search-field-padding + $weird-padding-offset;
+    }
+
+    .mat-form-field-label-wrapper {
+      // Original values + offsets
+      top: -$form-field-wrapper-padding + $search-field-padding;
+      padding-top: 0.84375em - $weird-padding-offset;
+    }
+
+    .mat-form-field-label {
+      top: 1.84375em - $search-field-padding + $weird-padding-offset;
+      margin-top: 0;
+      @media screen and (max-width: $layout-breakpoint-md - 1) {
+        margin-bottom: -$weird-padding-offset; // Another thing will clip the text on mobile
+      }
+    }
+
+    .mat-form-field-suffix {
+      flex-direction: row;
+      display: flex;
+      align-items: center;
+      align-self: center;
+      // Line height is 1.125em (for some reason), so offset it here
+      top: 0.125em;
+    }
+
+    .mat-select-arrow-wrapper {
+      transform: unset;
+    }
+
+    .floating-content-override {
+      position: absolute;
+      left: 0;
+      top: $search-field-padding + $weird-padding-offset;
+      pointer-events: none;
+    }
+  }
+
+  .mat-form-field[appearance="outline"].no-label-centered-text {
+    .mat-form-field-infix {
+      border-top: 0.34375em solid transparent;
+    }
+  }
+
+  .mat-form-field .mat-error-like {
+    position: absolute;
+    top: calc(100% + #{$weird-padding-offset});
+  }
+
+  .mat-form-field[appearance="outline"].centered-suffix {
+    .mat-form-field-suffix {
+      top: -0.125em;
+    }
+  }
+
+  .mat-form-field[appearance="outline"].centered-suffix-text {
+    .mat-form-field-suffix {
+      top: -0.25em;
+    }
+  }
+
+  .mat-form-field.single-line-content {
+    .mat-form-field-wrapper {
+      margin: 0;
+      padding: 0;
+    }
+
+    .mat-form-field-flex {
+      width: fit-content;
+      padding: 0;
+    }
+
+    .mat-form-field-infix {
+      border: 0;
+      padding: 0;
+      width: fit-content;
+    }
+  }
+}

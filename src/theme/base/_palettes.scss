@@ -1,0 +1,35 @@
+@use "./colors" as *;
+@use "~@angular/material/theming" as *;
+
+$ws-primary-color: (
+  100: lighten($primary, 30),
+  500: $primary,
+  700: darken($primary, 15),
+  contrast: (
+    100: $black,
+    500: $light-primary-text,
+    700: $light-primary-text,
+  )
+);
+
+$ws-secondary-color: (
+  100: lighten($secondary, 20),
+  500: $secondary,
+  700: darken($secondary, 30),
+  contrast: (
+    100: $black,
+    500: $black,
+    700: $black,
+  )
+);
+
+$ws-red-color: (
+  500: $red,
+  contrast: (
+    500: $white,
+  )
+);
+
+$edxp-primary: mat-palette($ws-primary-color, 500, 100, 700);
+$edxp-secondary: mat-palette($ws-secondary-color, 500, 100, 700);
+$edxp-warn: mat-palette($ws-red-color, 500);

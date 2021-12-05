@@ -1,0 +1,103 @@
+<div class="view-container">
+  <div class="create-job-container">
+    <div class="create-job-title">
+      <h1>Create a new Job Posting</h1>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="form-inputs"
+      [formGroup]="jobPostingForm">
+      <div class="job-posting-name-form-control">
+        <mat-form-field appearance="outline">
+          <mat-label>Job Posting Name</mat-label>
+          <input type="text"
+            matInput
+            formControlName="jobPostingName">
+        </mat-form-field>
+      </div>
+      <div class="job-posting-description">
+        <mat-form-field appearance="outline">
+          <mat-label>Job Posting Description</mat-label>
+          <textarea matInput
+            formControlName="jobPostingDescription"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="job-posting-keywords">
+        <div class="chip-list">
+          <mat-chip-list #keywordsList>
+            <mat-chip *ngFor="let keyword of keywords"
+              [selectable]="false"
+              [removable]="true"
+              (removed)="remove(keyword)">
+              {{ keyword.name }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+        <mat-form-field appearance="outline"
+          class="keyword-form-control">
+          <mat-label>Keywords</mat-label>
+          <input matInput
+            type="text"
+            [matChipInputFor]="keywordsList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="true"
+            (matChipInputTokenEnd)="addKeyword($event)">
+          <mat-hint>ex. Javascript, C++, ...</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="checkboxes">
+        <mat-checkbox color="primary"
+          formControlName="bachelorSelected">Bachelor</mat-checkbox>
+        <mat-checkbox color="primary"
+          formControlName="masterSelected"
+          (change)="setBachelor($event.checked)">Master</mat-checkbox>
+        <mat-checkbox color="primary"
+          formControlName="phdSelected"
+          (change)="setMaster($event.checked)">PhD</mat-checkbox>
+      </div>
+      <div class="sliders">
+        <div class="experience-slider">
+          <p>Experience</p>
+          <mat-slider thumbLabel
+            tickInterval="auto"
+            step="1"
+            min="0"
+            max="35"
+            [displayWith]="showYoE"
+            (change)="updateYoE($event)"></mat-slider>
+        </div>
+        <div class="price-slider">
+          <p>Salary</p>
+          <mat-slider thumbLabel
+            tickInterval="auto"
+            step="10"
+            min="500"
+            max="5000"
+            color="primary"
+            (change)="updateSalary($event)"
+            [displayWith]="showPrice"></mat-slider>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button mat-button
+        class="action-button back"
+        color="warn"
+        (click)="goBack()">
+        <div class="button-wrapper">
+          <mat-icon>chevron_left</mat-icon>
+          Back
+        </div>
+      </button>
+      <button mat-button
+        class="action-button next"
+        color="primary"
+        (click)="sendRequest()">
+        <div class="button-wrapper">
+          Next
+          <mat-icon>chevron_right</mat-icon>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

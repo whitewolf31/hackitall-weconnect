@@ -1,0 +1,14 @@
+@use "sass:math";
+
+// Typography variables
+$font-family-neogrotesk: "Neogrotesk", sans-serif;
+$font-family-primary: $font-family-neogrotesk;
+
+$button-border: 8px;
+
+// Keep these in sync with MobileDetectorService
+$layout-breakpoint-xs: 426px !default;
+$layout-breakpoint-sm: 768px !default;
+$layout-breakpoint-md: 1024px !default;
+$layout-breakpoint-lg: 1440px !default;
+$layout-breakpoint-xl: 1980px !default;

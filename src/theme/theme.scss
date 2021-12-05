@@ -1,0 +1,46 @@
+@use "base/colors" as *;
+@use "base/reset" as *;
+@use "base/palettes" as *;
+@use "base/typography" as *;
+@use "components/all" as *;
+@use "~@angular/material/theming" as *;
+
+@include mat-core($primary-typography);
+
+$hack-theme: mat-light-theme($hack-primary, $hack-secondary, $hack-warn);
+
+@function hack-material-overrides-foreground() {
+  $map: (
+    is-dark: false,
+    divider: $dark-gray,
+    hint-text: $dark-gray,
+    disabled: $dark-gray,
+    disabled-text: $dark-gray,
+    disabled-button: $gray,
+    secondary-text: $dark-gray,
+    text: $black,
+    icon: $dark-gray,
+    icons: $dark-gray,
+  );
+
+  @return $map;
+}
+
+@function hack-material-overrides-background() {
+  $map: (
+    background: $dark-gray
+  );
+
+  @return $map;
+}
+
+$hac-with-overrides: map-merge($hack-theme, (
+  foreground: map-merge($mat-light-theme-foreground, hack-material-overrides-foreground()),
+  background: map-merge($mat-light-theme-background, hack-material-overrides-background()),
+));
+
+@include angular-material-theme($hack-with-overrides);
+
+.hack {
+  @include material-components-theme($hack-with-overrides);
+}

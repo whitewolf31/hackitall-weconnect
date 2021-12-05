@@ -1,0 +1,8 @@
+// Custom Material Component
+@use "material/button" as *;
+@use "material/form-field" as *;
+
+@mixin material-components-theme($theme) {
+  @include hack-mat-button($theme);
+  @include hack-mat-form-field($theme);
+}

@@ -1,0 +1,44 @@
+{
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "compileOnSave": false,
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "importHelpers": true,
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "target": "es2015",
+    "module": "es2020",
+    "lib": ["es2018", "dom"],
+    "baseUrl": "src",
+    "paths": {
+      "@edxp-auth/*": ["app/authentication/*"],
+      "@edxp-core/*": ["app/core/*"],
+      "@edxp-experience/*": ["app/core/experience-system/*"],
+      "@edxp-models/*": ["app/core/models/*"],
+      "@edxp-pages/*": ["app/pages/*"],
+      "@edxp-skills/*": ["app/pages/skills/*"],
+      "@edxp-shared/*": ["app/shared/*"],
+      "@environments/*": ["environments/*"]
+    }
+  },
+  "exclude": ["./**/*.spec.ts"],
+  "include": ["./**/*.ts"]
+}
